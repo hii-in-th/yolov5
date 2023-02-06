@@ -39,4 +39,5 @@ async def detect_image_label(file: UploadFile):
     temp1=temp.loc[temp['name'] != 'screen'] #filter screen out which we dont use
     #temp2=temp1.loc[temp1['confidence'] > 0.5]
     thermo_result=temp1['name'].values.tolist()
-    return {"thermo": thermo_result}
+    confident_result=temp1['confidence'].values.tolist()                        ##<-----------------เพิ่มผลความมั่นใจ
+    return {"thermo": thermo_result, "confidence": confident_result}            ##<-----------------เพิ่มAPI resulf
