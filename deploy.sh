@@ -2,7 +2,7 @@
 
 #curl -sS http://127.0.0.1:5000/service/status
 
-export IMAGE_TAG=hiilab/test_detec:a2
+export IMAGE_TAG=hiilab/test_detec:a3
 export SERVICE_NAME=hii-yolov5
 
 docker service scale ${SERVICE_NAME}=0
@@ -14,3 +14,4 @@ docker service create --replicas 1 \
     ${IMAGE_TAG}
     
 docker service scale ${SERVICE_NAME}=1
+htop
